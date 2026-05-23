@@ -16,6 +16,8 @@ This repository provides the implementation of **Residual Condition Optimal Tran
 
 RCMamba is designed to reconstruct high-quality PAT images from sparse-view measurements. The framework combines wavelet-enhanced residual optimal transport with a hybrid multi-scale Mamba backbone to suppress streak artifacts while preserving fine anatomical details and long-range structural information.
 
+PAT provides optical-absorption contrast with ultrasonic detection, but sparse acquisition can introduce strong streak artifacts. RCMamba addresses this restoration problem by combining frequency-aware residual transport with state-space modeling, targeting both artifact removal and structural fidelity.
+
 ---
 
 ## Release Status
@@ -33,6 +35,19 @@ The repository page is being prepared for the full code release.
 
 ---
 
+## Paper Details
+
+| Item | Description |
+|---|---|
+| Task | Sparse-view PAT image restoration |
+| Input setting | Sparse-view reconstructions from 16, 32, and 64 projections |
+| Target setting | Dense-view PAT reconstruction |
+| Core method | Wavelet-enhanced residual optimal transport with a hybrid multi-scale Mamba backbone |
+| Evaluation data | Vessel phantom and in vivo mouse model experiments |
+| Main focus | Artifact suppression, fine-detail recovery, and long-range structural preservation |
+
+---
+
 ## Highlights
 
 - Wavelet residual-enhanced transport plan for sparse-view PAT restoration.
@@ -42,11 +57,26 @@ The repository page is being prepared for the full code release.
 
 ---
 
+## Key Ideas
+
+- **Wavelet-enhanced residual transport:** Uses multi-resolution wavelet analysis to model scale-dependent sparse-view artifacts.
+- **Wavelet coherence regularization:** Encourages consistency in frequency-aware residual restoration.
+- **Hybrid multi-scale Mamba backbone:** Combines window-based and global state-space scanning for local detail and long-range structure.
+- **Sparse-sampling restoration:** Targets diagnostically useful PAT reconstruction when acquisition views are limited.
+
+---
+
 ## Method Summary
 
 RCMamba restores sparse-view PAT images through a residual learning strategy guided by optimal transport. The wavelet-enhanced residual formulation helps model high-frequency details and artifact patterns, while the Mamba-based restoration backbone captures both local image structures and long-range spatial dependencies.
 
 The full implementation will include model definitions, configuration files, training scripts, testing scripts, and pretrained checkpoints.
+
+---
+
+## Keywords
+
+Photoacoustic tomography, sparse-view reconstruction, image restoration, state space models, Mamba, optimal transport, wavelet analysis, deep learning.
 
 ---
 
