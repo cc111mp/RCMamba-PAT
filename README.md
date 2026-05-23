@@ -10,7 +10,7 @@ Simon C. K. Chan, Bingxin Huang, Hannah H. Kim, Victor T. C. Tsang, Terence T. W
 
 ---
 
-## Introduction
+## Overview
 
 This repository provides the implementation of **Residual Condition Optimal Transport Mamba (RCMamba)** for sparse photoacoustic tomography (PAT) image restoration.
 
@@ -18,26 +18,53 @@ RCMamba is designed to reconstruct high-quality PAT images from sparse-view meas
 
 ---
 
+## Release Status
+
+The repository page is being prepared for the full code release.
+
+| Component | Status |
+|---|---|
+| Paper link | Available |
+| Source code | Preparing for release |
+| Training and testing configs | Preparing for release |
+| Quantitative results table | Preparing for release |
+| Visual comparison figures | Preparing for release |
+| Pretrained checkpoints | Preparing for release |
+
+---
+
 ## Highlights
 
 - Wavelet residual-enhanced transport plan for sparse-view PAT restoration.
 - Hybrid multi-scale Mamba architecture with local and global state-space scanning.
-- Designed for sparse acquisition settings such as 16, 32, and 64 projections.
-- Evaluated on vessel phantom and in vivo mouse model reconstruction tasks.
+- Restoration pipeline designed for sparse acquisition settings such as 16, 32, and 64 projections.
+- Evaluation on vessel phantom and in vivo mouse model reconstruction tasks.
+
+---
+
+## Method Summary
+
+RCMamba restores sparse-view PAT images through a residual learning strategy guided by optimal transport. The wavelet-enhanced residual formulation helps model high-frequency details and artifact patterns, while the Mamba-based restoration backbone captures both local image structures and long-range spatial dependencies.
+
+The full implementation will include model definitions, configuration files, training scripts, testing scripts, and pretrained checkpoints.
 
 ---
 
 ## Results
 
-Quantitative results and visual comparisons will be added with the full code release.
+Quantitative results and visual comparisons will be added together with the full code release.
 
-| Method | Sparse 16 | Sparse 32 | Sparse 64 |
+| Model | Sparse setting | Metrics | Status |
 |---|---|---|---|
-| RCMamba | Coming soon | Coming soon | Coming soon |
+| RCMamba | 16 projections | PSNR / SSIM | Preparing for release |
+| RCMamba | 32 projections | PSNR / SSIM | Preparing for release |
+| RCMamba | 64 projections | PSNR / SSIM | Preparing for release |
 
 ---
 
 ## Installation
+
+The following setup will be used after the source code is released:
 
 ```bash
 git clone https://github.com/cc111mp/RCMamba-PAT.git
@@ -75,6 +102,8 @@ The target images are reconstructed from dense-view measurements.
 
 ## Training
 
+Example training commands for the planned release:
+
 ```bash
 python train.py --config configs/rcmamba_16.yml
 ```
@@ -90,6 +119,8 @@ python train.py --config configs/rcmamba_64.yml
 
 ## Testing
 
+Example testing command for the planned release:
+
 ```bash
 python test.py \
   --config configs/rcmamba_16.yml \
@@ -102,9 +133,22 @@ python test.py \
 
 | Model | Setting | Link |
 |---|---|---|
-| RCMamba | 16 projections | Coming soon |
-| RCMamba | 32 projections | Coming soon |
-| RCMamba | 64 projections | Coming soon |
+| RCMamba | 16 projections | Preparing for release |
+| RCMamba | 32 projections | Preparing for release |
+| RCMamba | 64 projections | Preparing for release |
+
+---
+
+## Release Checklist
+
+- [x] Repository page
+- [x] Paper link
+- [ ] Source code
+- [ ] Environment file
+- [ ] Training and testing configs
+- [ ] Pretrained checkpoints
+- [ ] Quantitative results
+- [ ] Visual comparison figures
 
 ---
 
@@ -123,3 +167,9 @@ If you find this work useful, please cite:
   doi={10.1016/j.pacs.2025.100749}
 }
 ```
+
+---
+
+## Contact
+
+For questions or updates, please open an issue in this repository.
