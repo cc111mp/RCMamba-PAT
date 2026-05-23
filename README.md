@@ -45,11 +45,32 @@ This repository is prepared as the release page for the paper implementation. So
 | Component | Status |
 |---|---|
 | Paper link | Available |
+| Repository scaffold | Available |
+| Citation metadata | Available |
+| Dependency entry point | Placeholder available |
 | Source code | Preparing for release |
-| Environment file | Preparing for release |
 | Training / testing configs | Preparing for release |
 | Pretrained checkpoints | Preparing for release |
 | Results table and figures | Preparing for release |
+
+---
+
+## Repository Layout
+
+```bash
+.
+|-- README.md
+|-- CITATION.cff
+|-- requirements.txt
+|-- assets/
+|-- checkpoints/
+|-- configs/
+|-- data/
+|-- docs/
+`-- src/
+```
+
+Each release directory currently contains a placeholder README so the intended structure is explicit before the full source code is published.
 
 ---
 
@@ -132,8 +153,10 @@ Quantitative results and visual comparisons will be added with the full code rel
 
 - [x] Repository page
 - [x] Paper link
+- [x] Repository scaffold
+- [x] Citation metadata
+- [x] Dependency entry point
 - [ ] Source code
-- [ ] Environment file
 - [ ] Training and testing configs
 - [ ] Pretrained checkpoints
 - [ ] Quantitative results

@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated paper."
+title: "Wavelet-enhanced residual optimal transport for Mamba-based image restoration in photoacoustic tomography"
+authors:
+  - family-names: Chan
+    given-names: "Simon C. K."
+  - family-names: Huang
+    given-names: Bingxin
+  - family-names: Kim
+    given-names: "Hannah H."
+  - family-names: Tsang
+    given-names: "Victor T. C."
+  - family-names: Wong
+    given-names: "Terence T. W."
+doi: 10.1016/j.pacs.2025.100749
+date-released: "2025"
+repository-code: "https://github.com/cc111mp/RCMamba-PAT"
+preferred-citation:
+  type: article
+  title: "Wavelet-enhanced residual optimal transport for Mamba-based image restoration in photoacoustic tomography"
+  authors:
+    - family-names: Chan
+      given-names: "Simon C. K."
+    - family-names: Huang
+      given-names: Bingxin
+    - family-names: Kim
+      given-names: "Hannah H."
+    - family-names: Tsang
+      given-names: "Victor T. C."
+    - family-names: Wong
+      given-names: "Terence T. W."
+  journal: Photoacoustics
+  volume: "45"
+  start: "100749"
+  year: 2025
+  doi: 10.1016/j.pacs.2025.100749
+
