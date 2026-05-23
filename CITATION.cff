@@ -13,7 +13,6 @@ authors:
   - family-names: Wong
     given-names: "Terence T. W."
 doi: 10.1016/j.pacs.2025.100749
-date-released: "2025"
 repository-code: "https://github.com/cc111mp/RCMamba-PAT"
 preferred-citation:
   type: article
@@ -34,4 +33,3 @@ preferred-citation:
   start: "100749"
   year: 2025
   doi: 10.1016/j.pacs.2025.100749
-
