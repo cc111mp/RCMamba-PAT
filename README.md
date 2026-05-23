@@ -12,83 +12,44 @@ Simon C. K. Chan, Bingxin Huang, Hannah H. Kim, Victor T. C. Tsang, Terence T. W
 
 ## Overview
 
-This repository provides the implementation of **Residual Condition Optimal Transport Mamba (RCMamba)** for sparse photoacoustic tomography (PAT) image restoration.
+**RCMamba** restores sparse-view photoacoustic tomography (PAT) images by combining wavelet-enhanced residual optimal transport with a hybrid multi-scale Mamba backbone. The method targets streak-artifact suppression, fine-detail recovery, and long-range structural preservation under sparse acquisition.
 
-RCMamba is designed to reconstruct high-quality PAT images from sparse-view measurements. The framework combines wavelet-enhanced residual optimal transport with a hybrid multi-scale Mamba backbone to suppress streak artifacts while preserving fine anatomical details and long-range structural information.
-
-PAT provides optical-absorption contrast with ultrasonic detection, but sparse acquisition can introduce strong streak artifacts. RCMamba addresses this restoration problem by combining frequency-aware residual transport with state-space modeling, targeting both artifact removal and structural fidelity.
+This repository is prepared as the release page for the paper implementation. Source code, configs, checkpoints, and full reproduction commands will be added with the code release.
 
 ---
 
-## Release Status
-
-The repository page is being prepared for the full code release.
-
-| Component | Status |
-|---|---|
-| Paper link | Available |
-| Source code | Preparing for release |
-| Training and testing configs | Preparing for release |
-| Quantitative results table | Preparing for release |
-| Visual comparison figures | Preparing for release |
-| Pretrained checkpoints | Preparing for release |
-
----
-
-## Paper Details
+## At A Glance
 
 | Item | Description |
 |---|---|
 | Task | Sparse-view PAT image restoration |
-| Input setting | Sparse-view reconstructions from 16, 32, and 64 projections |
-| Target setting | Dense-view PAT reconstruction |
-| Core method | Wavelet-enhanced residual optimal transport with a hybrid multi-scale Mamba backbone |
-| Evaluation data | Vessel phantom and in vivo mouse model experiments |
-| Main focus | Artifact suppression, fine-detail recovery, and long-range structural preservation |
+| Inputs | Sparse-view reconstructions from 16, 32, and 64 projections |
+| Targets | Dense-view PAT reconstructions |
+| Core method | Wavelet-enhanced residual optimal transport + hybrid multi-scale Mamba |
+| Evaluation | Vessel phantom and in vivo mouse model experiments |
+| Metrics | PSNR / SSIM |
 
 ---
 
 ## Highlights
 
-- Wavelet residual-enhanced transport plan for sparse-view PAT restoration.
-- Hybrid multi-scale Mamba architecture with local and global state-space scanning.
-- Restoration pipeline designed for sparse acquisition settings such as 16, 32, and 64 projections.
-- Evaluation on vessel phantom and in vivo mouse model reconstruction tasks.
+- Wavelet-enhanced residual transport for sparse-view artifact modeling.
+- Wavelet coherence regularization for frequency-aware restoration.
+- Hybrid Mamba backbone with local and global state-space scanning.
+- Restoration pipeline for 16, 32, and 64 projection sparse PAT settings.
 
 ---
 
-## Key Ideas
+## Release Status
 
-- **Wavelet-enhanced residual transport:** Uses multi-resolution wavelet analysis to model scale-dependent sparse-view artifacts.
-- **Wavelet coherence regularization:** Encourages consistency in frequency-aware residual restoration.
-- **Hybrid multi-scale Mamba backbone:** Combines window-based and global state-space scanning for local detail and long-range structure.
-- **Sparse-sampling restoration:** Targets diagnostically useful PAT reconstruction when acquisition views are limited.
-
----
-
-## Method Summary
-
-RCMamba restores sparse-view PAT images through a residual learning strategy guided by optimal transport. The wavelet-enhanced residual formulation helps model high-frequency details and artifact patterns, while the Mamba-based restoration backbone captures both local image structures and long-range spatial dependencies.
-
-The full implementation will include model definitions, configuration files, training scripts, testing scripts, and pretrained checkpoints.
-
----
-
-## Keywords
-
-Photoacoustic tomography, sparse-view reconstruction, image restoration, state space models, Mamba, optimal transport, wavelet analysis, deep learning.
-
----
-
-## Results
-
-Quantitative results and visual comparisons will be added together with the full code release.
-
-| Model | Sparse setting | Metrics | Status |
-|---|---|---|---|
-| RCMamba | 16 projections | PSNR / SSIM | Preparing for release |
-| RCMamba | 32 projections | PSNR / SSIM | Preparing for release |
-| RCMamba | 64 projections | PSNR / SSIM | Preparing for release |
+| Component | Status |
+|---|---|
+| Paper link | Available |
+| Source code | Preparing for release |
+| Environment file | Preparing for release |
+| Training / testing configs | Preparing for release |
+| Pretrained checkpoints | Preparing for release |
+| Results table and figures | Preparing for release |
 
 ---
 
@@ -110,7 +71,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Please organize the dataset as follows:
+Expected data layout:
 
 ```bash
 data/
@@ -125,31 +86,13 @@ data/
     `-- target/
 ```
 
-The sparse input images are reconstructed from 16, 32, or 64 projections.  
-The target images are reconstructed from dense-view measurements.
+Sparse inputs correspond to 16, 32, or 64 projection reconstructions. Targets correspond to dense-view reconstructions.
 
 ---
 
-## Training
+## Quick Start
 
-Example training commands for the planned release:
-
-```bash
-python train.py --config configs/rcmamba_16.yml
-```
-
-For other sparse settings:
-
-```bash
-python train.py --config configs/rcmamba_32.yml
-python train.py --config configs/rcmamba_64.yml
-```
-
----
-
-## Testing
-
-Example testing command for the planned release:
+Example commands for the planned release:
 
 ```bash
 python test.py \
@@ -157,9 +100,25 @@ python test.py \
   --checkpoint checkpoints/rcmamba_16.pth
 ```
 
+```bash
+python train.py --config configs/rcmamba_16.yml
+```
+
 ---
 
-## Pretrained Models
+## Main Results
+
+Quantitative results and visual comparisons will be added with the full code release.
+
+| Model | Sparse setting | PSNR | SSIM | Checkpoint |
+|---|---:|---:|---:|---|
+| RCMamba | 16 projections | Preparing for release | Preparing for release | Preparing for release |
+| RCMamba | 32 projections | Preparing for release | Preparing for release | Preparing for release |
+| RCMamba | 64 projections | Preparing for release | Preparing for release | Preparing for release |
+
+---
+
+## Model Zoo
 
 | Model | Setting | Link |
 |---|---|---|
